@@ -3,36 +3,47 @@
 %bcond_without	static_libs	# don't build static libraries
 #
 Summary:	Command-line Sudoku solver and generator
+Summary(pl.UTF-8):	Uruchamiany z linii poleceń program do rozwiązywania i generowania Sudoku
 Name:		qqwing
 Version:	1.3.3
 Release:	1
-License:	GPL v2
-Group:		Applications
+License:	GPL v2+
+Group:		Applications/Games
 Source0:	http://qqwing.com/%{name}-%{version}.tar.gz
 # Source0-md5:	2d5541e89b82202c63ef18e49d99aa52
 URL:		http://qqwing.com/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
-BuildRequires:	libtool
+BuildRequires:	libtool >= 2:2.2
 Requires:	%{name}-libs = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-QQwing is a command-line Sudoku solver and generator.
+QQwing is a command-line Sudoku puzzles solver and generator.
+
+%description -l pl.UTF-8
+QQwing to uruchamiany z linii poleceń program do rozwiązywania i
+generowania łamigłówek Sudoku.
 
 %package libs
 Summary:	Library for Sudoku solving and generation
+Summary(pl.UTF-8):	Biblioteka do rozwiązywania i generowania Sudoku
 Group:		Libraries
 
 %description libs
 libqqwing is a C++ library for solving and generating Sudoku puzzles.
+
+%description libs -l pl.UTF-8
+libqqwing to biblioteka C++ do rozwiązywania i generowania łamigłówek
+Sudoku.
 
 %package devel
 Summary:	Header files for qqwing library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki qqwing
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
+Requires:	libstdc++-devel
 
 %description devel
 Header files for qqwing library.
@@ -76,7 +87,7 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post libs -p /sbin/ldconfig
+%post	libs -p /sbin/ldconfig
 %postun	libs -p /sbin/ldconfig
 
 %files
