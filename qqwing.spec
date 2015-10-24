@@ -6,7 +6,7 @@ Summary:	Command-line Sudoku solver and generator
 Summary(pl.UTF-8):	Uruchamiany z linii poleceń program do rozwiązywania i generowania Sudoku
 Name:		qqwing
 Version:	1.3.4
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Applications/Games
 #Source0Download: http://qqwing.com/download.html
