@@ -9,6 +9,7 @@ Version:	1.3.4
 Release:	1
 License:	GPL v2+
 Group:		Applications/Games
+#Source0Download: http://qqwing.com/download.html
 Source0:	http://qqwing.com/%{name}-%{version}.tar.gz
 # Source0-md5:	249dcfa8a1ca2d5cec5a81bcdbd017eb
 URL:		http://qqwing.com/
